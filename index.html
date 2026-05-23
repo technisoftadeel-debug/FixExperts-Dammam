@@ -55,6 +55,45 @@
       margin: auto;
     }
 
+    /* TOP INFO BAR */
+
+    .top-bar {
+      background: #0a1020;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      padding: 8px 0;
+      font-size: 13.5px;
+      color: #94a3b8;
+    }
+
+    .top-bar .container {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      direction: ltr;
+    }
+
+    .top-bar-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .top-bar-item i {
+      color: #25D366;
+      font-size: 13px;
+    }
+
+    .top-bar a {
+      color: #94a3b8;
+      transition: color .2s;
+    }
+
+    .top-bar a:hover {
+      color: #25D366;
+    }
+
     /* HEADER */
 
     header {
@@ -70,7 +109,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 18px 0;
+      padding: 14px 0;
     }
 
     .logo {
@@ -134,7 +173,7 @@
       transition: opacity 1.2s ease;
       display: flex;
       align-items: center;
-      padding-top: 90px;
+      padding-top: 120px;
     }
 
     .carousel-slide.active {
@@ -370,6 +409,75 @@
       width: 0%;
     }
 
+    /* HERO CALL LINE */
+
+    .hero-call {
+      margin-top: 18px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 17px;
+      font-weight: 700;
+      color: #4ade80;
+      direction: ltr;
+    }
+
+    .hero-call i {
+      font-size: 18px;
+    }
+
+    .hero-call a,
+    a[href^="tel:"],
+    .float-label {
+      direction: ltr;
+      unicode-bidi: embed;
+    }
+
+    .hero-call a {
+      color: #4ade80;
+      transition: color .2s;
+    }
+
+    .hero-call a:hover {
+      color: #fff;
+    }
+
+    .hero-call-center {
+      justify-content: center;
+    }
+
+    /* WHATSAPP FLOATING BUTTON */
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #25D366;
+      color: white;
+      padding: 13px 22px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 16px;
+      box-shadow: 0 6px 22px rgba(37, 211, 102, .48);
+      transition: .3s;
+      direction: ltr;
+    }
+
+    .whatsapp-float:hover {
+      background: #1eb85a;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(37, 211, 102, .58);
+      color: white;
+    }
+
+    .whatsapp-float i {
+      font-size: 24px;
+    }
+
     /* SECTION */
 
     section {
@@ -538,9 +646,45 @@
 
       /* Each slide: tighter vertical padding, allow content to breathe */
       .carousel-slide {
-        padding-top: 80px;
+        padding-top: 105px;
         padding-bottom: 80px;
         align-items: center;
+      }
+
+      .top-bar .container {
+        justify-content: flex-end;
+        gap: 12px;
+      }
+
+      .top-bar {
+        font-size: 12px;
+        padding: 6px 0;
+        text-align: center;
+      }
+
+      .top-bar-item {
+        gap: 5px;
+      }
+
+      .whatsapp-float .float-label {
+        display: none;
+      }
+
+      .whatsapp-float {
+        padding: 13px 16px;
+        border-radius: 50%;
+        width: 56px;
+        height: 56px;
+        justify-content: center;
+      }
+
+      .whatsapp-float i {
+        font-size: 26px;
+      }
+
+      .hero-call {
+        font-size: 15px;
+        margin-top: 14px;
       }
 
       /* Slide 1: collapse to single column, hide the feature box */
@@ -673,6 +817,21 @@
   <!-- HEADER -->
 
   <header>
+
+    <!-- TOP INFO BAR -->
+    <div class="top-bar">
+      <div class="container" style="font-weight: 600;font-size: 1.2rem;">
+        <div class="top-bar-item">
+          <i class="fas fa-phone"></i>
+          <a href="tel:+966582337725" style="direction:ltr;">+966 58 233 7725</a>
+        </div>
+        <div class="top-bar-item">
+          <i class="fas fa-location-dot"></i>
+          <span>حي, 50 St, Taybah, Dammam 32275, Saudi Arabia</span>
+        </div>
+      </div>
+    </div>
+
     <div class="container navbar">
 
       <div class="logo">
@@ -718,11 +877,16 @@
               </p>
 
               <div class="hero-buttons">
-                <a href="https://wa.me/+966582337725" target="_blank" class="btn btn-primary">
+                <a href="https://wa.me/+966582337725" target="_blank" class="btn btn-primary" style="direction: ltr;">
                   <i class="fab fa-whatsapp"></i>
                   <span id="heroWhatsapp">تواصل عبر واتساب</span>
                 </a>
                 <a href="#services" class="btn btn-outline" id="heroServices">عرض الخدمات</a>
+              </div>
+              <div class="hero-call">
+                <i class="fas fa-phone"></i>
+                <span id="heroCallLabel">اتصل بنا:</span>
+                <a href="tel:+966582337725" dir="ltr">+966 58 233 7725</a>
               </div>
             </div>
 
@@ -764,11 +928,16 @@
             </p>
 
             <div class="hero-buttons" style="justify-content:center">
-              <a href="https://wa.me/+966582337725" target="_blank" class="btn btn-primary">
+              <a href="https://wa.me/+966582337725" target="_blank" class="btn btn-primary" style="direction: ltr;">
                 <i class="fab fa-whatsapp"></i>
                 <span id="slide2Btn">احجز الآن</span>
               </a>
               <a href="#services" class="btn btn-outline">الخدمات</a>
+            </div>
+            <div class="hero-call hero-call-center">
+              <i class="fas fa-phone"></i>
+              <span id="slide2CallLabel">اتصل بنا:</span>
+              <a href="tel:+966582337725" dir="ltr">+966 58 233 7725</a>
             </div>
 
           </div>
@@ -799,10 +968,15 @@
             </p>
 
             <div class="hero-buttons" style="justify-content:center">
-              <a href="https://wa.me/+966582337725" target="_blank" class="btn btn-primary">
+              <a href="https://wa.me/+966582337725" target="_blank" class="btn btn-primary" style="direction: ltr;">
                 <i class="fab fa-whatsapp"></i>
                 <span id="slide3Btn">اتصل بنا الآن</span>
               </a>
+            </div>
+            <div class="hero-call hero-call-center">
+              <i class="fas fa-phone"></i>
+              <span id="slide3CallLabel">اتصل بنا:</span>
+              <a href="tel:+966582337725" dir="ltr">+966 58 233 7725</a>
             </div>
 
             <div class="slide-stats">
@@ -853,6 +1027,11 @@
                 <span id="slide4Btn">اطلب الخدمة الآن</span>
               </a>
               <a href="#contact" class="btn btn-outline" id="slide4OutlineBtn">تواصل معنا</a>
+            </div>
+            <div class="hero-call hero-call-center">
+              <i class="fas fa-phone"></i>
+              <span id="slide4CallLabel">اتصل بنا:</span>
+              <a href="tel:+966582337725" dir="ltr">+966 58 233 7725</a>
             </div>
 
           </div>
@@ -1113,7 +1292,8 @@
 
         <a href="https://wa.me/+966582337725"
           target="_blank"
-          class="whatsapp-btn">
+          class="whatsapp-btn"
+          style="direction: ltr;">
 
           <i class="fab fa-whatsapp"></i>
 
@@ -1138,6 +1318,12 @@
     </p>
 
   </footer>
+
+  <!-- WHATSAPP FLOATING BUTTON -->
+  <a href="https://wa.me/+966582337725" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="float-label" style="direction:ltr;">+966 58 233 7725</span>
+  </a>
 
   <!-- CAROUSEL SCRIPT -->
 
@@ -1297,6 +1483,12 @@
 
         document.getElementById("footerText").innerText =
           "© 2026 FixExperts Dammam - All Rights Reserved";
+
+        // Call Us labels
+        document.getElementById("heroCallLabel").innerText = "Call Us:";
+        document.getElementById("slide2CallLabel").innerText = "Call Us:";
+        document.getElementById("slide3CallLabel").innerText = "Call Us:";
+        document.getElementById("slide4CallLabel").innerText = "Call Us:";
 
       } else {
 
